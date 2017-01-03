@@ -1,2 +1,2 @@
-intern@
+no intern@
 lanet
