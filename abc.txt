@@ -1,5 +1,3 @@
-internship
-to
-karvi j padse
-@
-lanet
+hello world
+this is lanetteam
+done by new
