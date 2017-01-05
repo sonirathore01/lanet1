@@ -1,0 +1,35 @@
+<html ng-app="app">
+<head>
+    <title>My Angular app</title>
+    <script src="js/angular.js"></script>
+    <style>
+        .modern {background: blue;}
+        .trend {background: green;}
+    </style>
+</head>
+<body>
+    <div ng-controller="MoviesController">
+        <ul>
+            <li ng-repeat="i in this.items"
+                ng-class="i.year <=2015 ? 'modern' : 'trend'"
+            >
+                <p> {{ i.title }} </p>
+                <p> {{ i.year }}</p>
+                <p ng-if="i.popular"> this movie is popular!!</p>
+                <p ng-hide="i.year <= 2015"> this movie is in trend!!</p>
+                <div ng-switch="i.category">
+                    <div ng-switch-when="love">
+                        <p>this movie is on lovestory</p>
+                    </div>
+                    <div ng-switch-when="patriotism">
+                        <p>this movie is on patriotism</p>
+                    </div>
+                </div>
+                <input type="text" ng-model="i.year">
+            </li>
+        </ul>
+    </div>
+    <script src="js/app.js"></script>
+    <script src="js/MoviesController.js"></script>
+</body>
+</html>
