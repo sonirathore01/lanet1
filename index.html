@@ -1,0 +1,32 @@
+<html ng-app="app">
+<head>
+    <title>My Angular app</title>
+    <script src="js/angular.js"></script>
+    <style>
+        .modern {background: blue;}
+        .trend {background: green;}
+    </style>
+</head>
+<body>
+    <div ng-controller="MoviesController">
+        <ul>
+            <li ng-repeat="i in this.items">
+                <p> {{ i.title }} </p>
+                <a href="" ng-click="this.addTolikes(i);"> like this movie </a>
+            </li>
+        </ul>
+        <hr>
+        <div class="likes">
+            <p>My likeslist</p>
+            <ul>
+                <li ng-repeat="j in this.likeslist">
+                    <p> {{ j.title }} </p>
+                    <a href="" ng-click="this.unlike($index);"> unlike  </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+    <script src="js/MoviesController.js"></script>
+</body>
+</html>
