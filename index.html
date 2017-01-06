@@ -1,0 +1,30 @@
+<html ng-app="app">
+<head>
+    <title>My Angular app</title>
+    <script src="js/angular.js"></script>
+    <style>
+        .modern {background: blue;}
+        .trend {background: green;}
+    </style>
+</head>
+<body>
+    <div ng-controller="MoviesController">
+
+        <form ng-submit="this.addMovie();">
+        <p>add a movie</p>
+        <input type="text" placeholder="search here" ng-model="search">
+
+        </form>
+        <ul>
+            <li ng-repeat="i in this.items | filter: search">
+                <p> {{ $index }} </p>
+                <p> {{ i.title }} </p>
+                <p> {{ i.year }} </p>
+            </li>
+        </ul>
+
+    </div>
+    <script src="js/app.js"></script>
+    <script src="js/MoviesController.js"></script>
+</body>
+</html>
