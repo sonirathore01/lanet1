@@ -12,12 +12,11 @@
 
         <form ng-submit="this.addMovie();">
         <p>add a movie</p>
-        <input type="text" placeholder="title" ng-model="this.newtitle">
-        <input type="text" placeholder="release year" ng-model="this.newyear">
-        <button type="submit">Add to items</button>
+        <input type="text" placeholder="search here" ng-model="search">
+
         </form>
         <ul>
-            <li ng-repeat="i in this.items">
+            <li ng-repeat="i in this.items | filter: search">
                 <p> {{ $index }} </p>
                 <p> {{ i.title }} </p>
                 <p> {{ i.year }} </p>
