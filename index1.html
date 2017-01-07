@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> sample table </title>
+</head>
+<body>
+<table name="tb1" border="1" >
+    <tr>
+        <td>Name:</td>
+        <td><input type="text" id="name"></td>
+    </tr>
+    <tr>
+        <td>age:</td>
+        <td><input type="text" id="age"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="button" value="submit" id="submit" onclick="validate()"></td>
+    </tr>
+</table>
+<hr>
+<div id="abc">
+    <table id="dTable"  class="table">
+
+    </table>
+
+</div>
+
+
+
+<script type="text/javascript">
+    function validate() {
+        if ((document.getElementById("name").value == ""))
+            alert("this field is required!!");
+
+        if((document.getElementById("age").value == "") || isNaN(document.getElementById("age").value))
+            alert("this field must be a number!!");
+
+        var employee = new Array();
+        employee.push(["name","age","edit"]);
+
+        var tb= document.getElementById("dTable");
+        tb.border = "1";
+
+        var columnCount = 3;
+        var row = tb.insertRow(0);
+
+        var cell1 = row.insertCell(0);
+        cell1.innerHTML = document.getElementById("name").value;
+        var cell2 = row.insertCell(1);
+        cell2.innerHTML = document.getElementById("age").value;
+
+
+
+        var dvTable = document.getElementById("abc");
+        dvTable.innerHTML = "";
+        dvTable.appendChild(tb);
+
+
+
+    }
+</script>
+</body>
+</html>
