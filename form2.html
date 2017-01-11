@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>new form</title>
+</head>
+
+<body>
+    <button type="button" onclick="fun()">Click Me!</button>
+    <div id="x">
+        <table id="tb1"></table>
+    </div>
+    <script type="text/javascript">
+        function fun() {
+            var i,c;
+            var name = prompt('your name please!!');
+
+            var users = ["Uername", "Edit", "Delete"];
+
+            var tb = document.getElementById("tb1");
+            tb.border = "1";
+
+            var columnCount = users[0].length;
+
+            var row = tb.insertRow(i);
+            c++;
+            var cell0 = row.insertCell(0);
+            cell0.innerHTML = name;
+
+            var cell1 = row.insertCell(1);
+            var element = document.createElement("input");
+            element.type = "button";
+            element.name = "edt";
+            element.value = "edit";
+            element.onclick = function () {
+                c--;
+                var value = prompt("pls edit your name", name);
+                cell0.innerHTML = value;
+            };
+            cell1.appendChild(element);
+
+            var cell2 = row.insertCell(2);
+            var element1 = document.createElement("input");
+            element1.type = "button";
+            element1.name = "del";
+            element1.value = "Delete";
+            element1.onclick = function () {
+                c--;
+                // var c=cell0.cellIndex;
+                // var r=cell0.parentNode.rowIndex;
+                // var k=r*3+c+1;
+                //cell0.innerHTML="";
+                //cell1.removeChild(element);
+                //celld.removeChild(element1);
+                //table.deleteCell(ce)
+                tb.deleteRow(cell0.parentNode.rowIndex);
+                if(c == 0)
+
+            };
+            cell2.appendChild(element1);
+
+            i++;
+            var dvTable = document.getElementById("x");
+            dvTable.innerHTML = "";
+            dvTable.appendChild(tb);
+        }
+    </script>
+</body>
+</html>
